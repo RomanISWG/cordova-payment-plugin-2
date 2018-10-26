@@ -39,27 +39,27 @@ open class Utils {
         purchaseResponseAsDict["message"] = purchaseResObj.message as AnyObject
         
         if let theToken = purchaseResObj.token {
-            if theToken.characters.count > 0 {
+            if theToken.count > 0 {
                 purchaseResponseAsDict["token"] = theToken as AnyObject
             }
         }
         if let theTokenExpiry = purchaseResObj.tokenExpiryDate {
-            if theTokenExpiry.characters.count > 0 {
+            if theTokenExpiry.count > 0 {
                 purchaseResponseAsDict["tokenExpiryDate"] = theTokenExpiry as AnyObject
             }
         }
         if let thePanLast4 = purchaseResObj.panLast4Digits {
-            if thePanLast4.characters.count > 0 {
+            if thePanLast4.count > 0 {
                 purchaseResponseAsDict["panLast4Digits"] = thePanLast4 as AnyObject
             }
         }
         if let theCardType = purchaseResObj.cardType {
-            if theCardType.characters.count > 0 {
+            if theCardType.count > 0 {
                 purchaseResponseAsDict["cardType"] = theCardType as AnyObject
             }
         }
         if let otpTransactionIdentifier = purchaseResObj.otpTransactionIdentifier {
-            if otpTransactionIdentifier.characters.count > 0 {
+            if otpTransactionIdentifier.count > 0 {
                 purchaseResponseAsDict["otpTransactionIdentifier"] = otpTransactionIdentifier as AnyObject
             }
         }
@@ -121,8 +121,8 @@ open class Utils {
     }
     
     class func showError(_ cdvPlugin: PaymentPlugin, message: String) {
-        let alertVc = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        let alertVc = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         alertVc.addAction(action)
         
         cdvPlugin.viewController?.present(alertVc, animated: true, completion: nil)

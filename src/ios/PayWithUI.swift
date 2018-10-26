@@ -231,7 +231,7 @@ open class PayWithUI {
     }
     
     class func addBackNavigationMenuItem(_ currentlyDisplayedVc: UIViewController) {
-        let leftButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PayWithUI.backAction))
+        let leftButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(PayWithUI.backAction))
         
         //currentlyDisplayedVc.navigationItem.title = "Pay"
         currentlyDisplayedVc.navigationItem.leftBarButtonItem = leftButton
